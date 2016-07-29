@@ -1,0 +1,210 @@
+
+
+
+
+
+
+alias ls='ls --color=auto'
+alias ll='ls -alF'
+alias cd..='cd ..'
+alias emacs='emacs -nw '
+alias emasc='emacs -nw '
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+
+# -- Shorteners --
+alias ape='php bin/console'
+alias drun="docker run -it "
+
+# -- Utils --
+alias prettygit='git log --color --graph --pretty=format:"%h - %an, %ar : %s"'
+alias csr="ffcast -s rec "
+alias gitPushO='sudo -E git push origin'
+
+# -- Fun aliases --
+alias abcdefghijklmnopqrstuvwxyz='echo '\''YOU ROCK!!'\'''
+alias supercaca='CACA_DRIVER=raw CACA_GEOMETRY=80x32 cacademo | cacaplay'
+alias dockernyan='docker run -it supertest2014/nyan'
+
+typeabc() {
+    time read -r -s -p "Write abcdefghijklmnopqrstuvwxyz: " response
+    if [ $response == "abcdefghijklmnopqrstuvwxyz" ]; then
+        echo "Correct!";
+    fi
+}
+
+# Docker removal
+drm() {
+    case $1 in
+        all)
+            docker rm $(docker ps -q -a -f status=exited);
+            ;;
+        no-alias)
+            #Uses a grep to include only the ones with a default alias formatting.
+            docker rm $(docker ps -a -f status=exited | grep '[ ][a-z]*_[a-z]*$' | awk '{print $1}')
+            ;;
+        noneimgs)
+            #Removes untagged images
+            docker rmi $(docker images | grep "^<none>" | awk '{print $3}');
+            ;;
+        *)
+            echo $"Usage $0 {all|no-alias|noneimgs} "
+            ;;
+    esac
+}
+
+# haha, this is basically 'git add -p'
+addgit() {
+    git diff $2 $1
+    read -r -p "wanna add the file? [y/N] " response
+    case $response in
+        [yY][eE][sS]|[yY])
+            git add $1
+            ;;
+        *)
+            ;;
+    esac
+    git status
+}
+
+moodledocker() {
+    docker start 185ea915c426 &&
+    docker exec -it 185ea915c426 service mysql restart &&
+    VAR=$(docker exec -it 185ea915c426 service apache2 restart | grep --color=never -oP [0-9]+.[0-9]+.[0-9]+.[0-9]+)
+    sudo sed -i '/alfro.moodle.docker/c\'$VAR'    alfro.moodle.docker' /etc/hosts
+    echo "Initialized moodle docker. IP= $VAR  Address=alfro.moodle.docker"
+}
+
+
+
+
+#########
+#ALIASES#
+#########
+export ANSIBLE_COW_SELECTION='random'
+alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+
+alias jsc='rhino'
+alias l='ls -CF'
+alias la='ls -A'
+alias resetbash='. ~/.bashrc'
+
+gitdiff() {
+    git diff -- $1 $1
+}
+
+dockrun() {
+    cd /home/alfro/projects/sfprojects/configuration-management
+    export ANSIBLE_COW_SELECTION=random
+    echo "Ejecutando [ $2 ] para [ $1 ]"
+    sudo ./arrancar_dockers.sh -d $1 -f $2
+    cd -
+}
+
+dockmysql() {
+    echo "--- Acceso a la base de datos de los pumukit dockers. Script dockmysql.v0.4 ---"
+    if [ -z "$1" ]; then
+	echo "Por favor, inserta una máquina: dockmysql [uned/cmar/koeln] -d"
+    else
+	sql_sentence="mysql -D"
+	execute_script="true"
+	if [ $2 = "-d"  ]; then
+	    sql_sentence="mysqldump"
+	fi
+	case $1 in
+	    uned)
+		user="pumukit"
+		pass="pumukit"
+		host="uned-mysql"
+		db="unedtv"
+		docker_alias="micanaluned.es"
+		;;
+	    koeln)
+		user="pmk"
+		pass="koeln00"
+		host="koeln-mysql"
+		db="pumukit"
+		docker_alias="koelnpumukit.es"
+		;;
+	    cmar)
+		user="root"
+		pass="cmar"
+		host="cmar-mysql"
+		db="pumukitcmar"
+		docker_alias="cmarpumukit.es"
+		;;
+	    *)
+		execute_script="false";
+		;;
+	esac
+	if [ $execute_script = "true" ]; then
+	    if [ $2 = "-e" ]; then
+		echo "$sql_sentence $db -u$user -p$pass -h$host"
+	    else
+		if [ $2 = "-d" ]; then
+	       	    docker exec -it $docker_alias $sql_sentence $db -u$user -p$pass -h$host > new_fixtures.sql
+		else
+		    docker exec -it $docker_alias $sql_sentence $db -u$user -p$pass -h$host
+		fi
+	    fi
+
+	else
+	    echo "La máquina insertada no es válida. Por favor, inserte: dockmysql [uned/cmar/koeln]"
+	fi
+    fi
+}
+dockexec() {
+    case $1 in
+        uned)
+	    docker_alias="micanaluned.es"
+	    ;;
+        cmar)
+	    docker_alias="cmarpumukit.es"
+	    ;;
+        koeln)
+	    docker_alias="koelnpumukit.es"
+	    ;;
+        armazeg)
+            docker_alias="backend.armazeg.org"
+            ;;
+    esac
+
+    docker exec -it $docker_alias /bin/bash
+}
+addDevFixtures() {
+    git checkout dev data/sql/fixtures.sql
+    git add data/sql/fixtures.sql
+    git commit -m "Added fixtures from dev."
+}
+cdpmk() {
+    case $1 in
+        cmar)
+            cd ~/projects/sfprojects/cmar/pumukit
+            ;;
+        koeln)
+            cd ~/projects/sfprojects/koeln/pumukit
+            ;;
+        uned)
+            cd ~/projects/sfprojects/uned/pumukit
+            ;;
+        pmk1)
+            cd ~/projects/sfprojects
+            ;;
+        pmk2)
+            cd ~/projects/sf2projects
+            ;;
+        geant)
+            cd ~/projects/sf2projects/geantpmk2/
+            ;;
+        moodle)
+            cd ~/projects/sf2projects/moodle/
+            ;;
+        paella)
+            cd ~/projects/paellaplayer/
+            ;;
+        armazeg)
+            cd ~/projects/sf2projects/armazeg-env/application/
+            ;;
+    esac
+}
