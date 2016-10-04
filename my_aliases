@@ -1,9 +1,3 @@
-
-
-
-
-
-
 alias ls='ls --color=auto'
 alias ll='ls -alF'
 alias cd..='cd ..'
@@ -18,7 +12,8 @@ alias ape='php bin/console'
 alias drun="docker run -it "
 
 # -- Utils --
-alias prettygit='git log --color --graph --pretty=format:"%h - %an, %ar : %s"'
+#alias prettygit='git log --color --graph --pretty=format:"%h - %an, %ar : %s"'
+alias prettygit='git log --color --graph --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset" --abbrev-commit'
 alias csr="ffcast -s rec "
 alias gitPushO='sudo -E git push origin'
 
