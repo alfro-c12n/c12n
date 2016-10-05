@@ -65,3 +65,9 @@
 (global-set-key (kbd "C-c q") 'tab-indenting)
 (put 'tab-indenting 'kmacro t)
 ;;; === END MY MACROS ===
+(put 'upcase-region 'disabled nil)
+(put 'downcase-region 'disabled nil)
+
+(defun uuid-insert-random ()
+  (interactive)
+  (shell-command "uuidgen" t))
