@@ -203,3 +203,23 @@ cdpmk() {
             ;;
     esac
 }
+
+
+
+
+
+# ==== ====
+# UNU
+alias unumysql="docker exec -it mysql.pauwes.local mysql -pgcms -D unuldapmanager"
+
+unuldap() {
+          docker exec -it ldap.pauwes.local apt update
+          docker exec -it ldap.pauwes.local apt install shelldap -y
+          docker exec -it ldap.pauwes.local apt install vim -y
+          echo "Pass: admin"
+          docker exec -it ldap.pauwes.local shelldap --server ldap.pauwes.local -D 'cn=admin,dc=teltek,dc=es' -padmin
+}
+dnsdockstart() {
+    docker rm dnsdock
+    docker run -d -v /var/run/docker.sock:/var/run/docker.sock --name dnsdock -p 172.17.0.1:53:53/udp tonistiigi/dnsdock
+}
