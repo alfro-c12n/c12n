@@ -64,9 +64,9 @@ addgit() {
 }
 
 moodledocker() {
-    docker start 185ea915c426 &&
-    docker exec -it 185ea915c426 service mysql restart &&
-    VAR=$(docker exec -it 185ea915c426 service apache2 restart | grep --color=never -oP [0-9]+.[0-9]+.[0-9]+.[0-9]+)
+    docker start 46344b49e662 &&
+    docker exec -it 46344b49e662 service mysql restart &&
+    VAR=$(docker exec -it 46344b49e662 service apache2 restart | grep --color=never -oP [0-9]+.[0-9]+.[0-9]+.[0-9]+)
     sudo sed -i '/alfro.moodle.docker/c\'$VAR'    alfro.moodle.docker' /etc/hosts
     echo "Initialized moodle docker. IP= $VAR  Address=alfro.moodle.docker"
 }
