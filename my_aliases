@@ -29,6 +29,9 @@ alias dockernyan='docker run -it supertest2014/nyan'
 alias cafe='cat /dev/urandom | hexdump -C | grep '\''ca fe'\'''
 alias bman='man --html=x-www-browser' #If you get a "command exited with status 3" error you need to install groff.
 
+
+# -- Funcs list --
+
 typeabc() {
     time read -r -s -p "Write abcdefghijklmnopqrstuvwxyz: " response
     if [ $response == "abcdefghijklmnopqrstuvwxyz" ]; then
@@ -265,4 +268,8 @@ runopencast() {
     echo " admin/opencast"
     echo " matterhorn_system_account/CHANGE_ME"
     docker run --rm --name opencast2 -it registry.teltek.es/base/matterhorn:2.1.x
+}
+
+bannerwatch() {
+    export I=$(date +%s); watch -t -n 1 'T=$(date +%s);E=$(($T-$I));hours=$((E / 3600)) ; seconds=$((E % 3600)) ; minutes=$((seconds / 60)) ; seconds=$((seconds % 60)) ; echo $(printf "%02d:%02d:%02d" $hours $minutes $seconds) | xargs banner'
 }
