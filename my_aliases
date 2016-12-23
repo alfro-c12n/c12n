@@ -1,3 +1,8 @@
+export EDITOR=emacs
+# Enables autocompletion for stormssh
+# https://github.com/vigo/stormssh-completion
+source /home/alfro/projects/stormssh-completion/stormssh
+
 alias ls='ls --color=auto'
 alias ll='ls -alF'
 alias cd..='cd ..'
@@ -21,6 +26,8 @@ alias gitPushO='sudo -E git push origin'
 alias abcdefghijklmnopqrstuvwxyz='echo '\''YOU ROCK!!'\'''
 alias supercaca='CACA_DRIVER=raw CACA_GEOMETRY=80x32 cacademo | cacaplay'
 alias dockernyan='docker run -it supertest2014/nyan'
+alias cafe='cat /dev/urandom | hexdump -C | grep '\''ca fe'\'''
+alias bman='man --html=x-www-browser' #If you get a "command exited with status 3" error you need to install groff.
 
 typeabc() {
     time read -r -s -p "Write abcdefghijklmnopqrstuvwxyz: " response
@@ -28,6 +35,22 @@ typeabc() {
         echo "Correct!";
     fi
 }
+
+whatinstalled () {
+    local cmdpath=$(realpath -eP $(which -a $1 | grep -E "^/" | tail -n 1) 2>/dev/null) && [ -x "$cmdpath" ] &&
+        dpkg -S $cmdpath 2>/dev/null | grep -E ": $cmdpath\$" | cut -d ":" -f 1;
+}
+
+
+# -- Start Galicaster Env --
+gcdocs() {
+    docker run -d -v /media/alfro/DATA/projects/galicaster/developer-docs:/docs jobandtalent/mkdocs serve -a 0.0.0.0:80
+}
+
+
+
+
+
 
 # Docker removal
 drm() {
@@ -234,4 +257,12 @@ unuldap() {
 dnsdockstart() {
     docker rm dnsdock
     docker run -d -v /var/run/docker.sock:/var/run/docker.sock --name dnsdock -p 172.17.0.1:53:53/udp tonistiigi/dnsdock
+}
+
+
+runopencast() {
+    echo "Usuarios por defecto:"
+    echo " admin/opencast"
+    echo " matterhorn_system_account/CHANGE_ME"
+    docker run --rm --name opencast2 -it registry.teltek.es/base/matterhorn:2.1.x
 }
