@@ -64,11 +64,22 @@ addgit() {
 }
 
 moodledocker() {
-    docker start 46344b49e662 &&
-    docker exec -it 46344b49e662 service mysql restart &&
-    VAR=$(docker exec -it 46344b49e662 service apache2 restart | grep --color=never -oP [0-9]+.[0-9]+.[0-9]+.[0-9]+)
-    sudo sed -i '/alfro.moodle.docker/c\'$VAR'    alfro.moodle.docker' /etc/hosts
-    echo "Initialized moodle docker. IP= $VAR  Address=alfro.moodle.docker"
+    echo "Stopping existing docker."
+    docker stop alfro.moodle
+    echo "Removing existing docker."
+    docker rm alfro.moodle
+    PMK_MOODLE="/home/alfro/projects/sf2projects/armazeg-env/pumukit2-bundles/PuMuKIT2-moodle-bundle"
+    echo "Launching new docker, moodle directory: $PMK_MOODLE"
+    docker run -d --name alfro.moodle -v $PMK_MOODLE:/var/www/moodlebundle/PuMuKIT2-moodle-bundle alfro/ubuntu-moodle:v8
+    echo "Creating symbolic link for config.php..."
+    docker exec alfro.moodle ln -s /var/www/html/moodle/config.php /var/www/moodlebundle/PuMuKIT2-moodle-bundle/Resources/data/pumoodle/config.php
+    # docker start alfro.moodle &&
+    # docker exec -it alfro.moodle service mysql restart &&
+    # VAR=$(docker exec -it alfro.moodle service apache2 restart | grep --color=never -oP [0-9]+.[0-9]+.[0-9]+.[0-9]+)
+    # sudo sed -i '/alfro.moodle.docker/c\'$VAR'    alfro.moodle.docker' /etc/hosts
+    echo "Initialized moodle docker. Address=alfro.moodle.docker"
+    echo " User: admin"
+    echo " Password: passwordftw00Alfro."
 }
 
 
@@ -219,6 +230,7 @@ unuldap() {
           echo "Pass: admin"
           docker exec -it ldap.pauwes.local shelldap --server ldap.pauwes.local -D 'cn=admin,dc=teltek,dc=es' -padmin
 }
+
 dnsdockstart() {
     docker rm dnsdock
     docker run -d -v /var/run/docker.sock:/var/run/docker.sock --name dnsdock -p 172.17.0.1:53:53/udp tonistiigi/dnsdock
