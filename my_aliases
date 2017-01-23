@@ -280,3 +280,4 @@ runopencast() {
 bannerwatch() {
     export I=$(date +%s); watch -t -n 1 'T=$(date +%s);E=$(($T-$I));hours=$((E / 3600)) ; seconds=$((E % 3600)) ; minutes=$((seconds / 60)) ; seconds=$((seconds % 60)) ; echo $(printf "%02d:%02d:%02d" $hours $minutes $seconds) | xargs banner'
 }
+alias pulseVU="gst-launch -m pulsesrc ! level interval=1000000000 ! fakesink "
