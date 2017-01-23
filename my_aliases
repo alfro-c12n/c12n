@@ -69,8 +69,15 @@ drm() {
             #Removes untagged images
             docker rmi $(docker images | grep "^<none>" | awk '{print $3}');
             ;;
+        -a)
+            if [[ -z $2 ]]; then
+                echo $"Missing id/alias for the -a parameter ('drm -a' equals to 'docker rm' )"
+                return
+            fi
+            docker rm $2
+            ;;
         *)
-            echo $"Usage $0 {all|no-alias|noneimgs} "
+            echo $"Usage $0 {all|no-alias|noneimgs|-a [id]} "
             ;;
     esac
 }
