@@ -1,7 +1,13 @@
 export EDITOR=emacs
+
 # Enables autocompletion for stormssh
 # https://github.com/vigo/stormssh-completion
+autoload bashcompinit
+bashcompinit
 source /home/alfro/projects/stormssh-completion/stormssh
+
+# Enables nice shortcuts: (Yet to finish)
+dconf write /org/compiz/profiles/unity/plugins/put/put-next-output-key "'<Shift><Control>Down'"
 
 alias ls='ls --color=auto'
 alias ll='ls -alF'
@@ -17,6 +23,7 @@ alias ape='php bin/console'
 alias drun="docker run -it "
 
 # -- Utils --
+alias follow="git log --topo-order -u -L $2,${3:-$2}:'$1'"
 #alias prettygit='git log --color --graph --pretty=format:"%h - %an, %ar : %s"'
 alias prettygit='git log --color --graph --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset" --abbrev-commit'
 alias csr="ffcast -s rec "
@@ -266,7 +273,7 @@ unuldap() {
 
 dnsdockstart() {
     docker rm dnsdock
-    docker run -d -v /var/run/docker.sock:/var/run/docker.sock --name dnsdock -p 172.17.0.1:53:53/udp tonistiigi/dnsdock
+    docker run -d -v /var/run/docker.sock:/var/run/docker.sock --name dnsdock -p 172.17.0.1:53:53/udp tonistiigi/dnsdock --nameserver="10.21.10.1:53"
 }
 
 
@@ -281,3 +288,8 @@ bannerwatch() {
     export I=$(date +%s); watch -t -n 1 'T=$(date +%s);E=$(($T-$I));hours=$((E / 3600)) ; seconds=$((E % 3600)) ; minutes=$((seconds / 60)) ; seconds=$((seconds % 60)) ; echo $(printf "%02d:%02d:%02d" $hours $minutes $seconds) | xargs banner'
 }
 alias pulseVU="gst-launch -m pulsesrc ! level interval=1000000000 ! fakesink "
+
+stopwatcher() {
+    export I=$(date +%s); watch -t -n 1 'T=$(date +%s);E=$(($T-$I));hours=$((E / 3600)) ; seconds=$((E % 3600)) ; minutes=$((seconds / 60)) ; seconds=$((seconds % 60)) ; echo $(printf "%02d:%02d:%02d" $hours $minutes $seconds) | toilet -F border'
+}
+
