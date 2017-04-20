@@ -20,12 +20,20 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(ansi-color-names-vector ["#2d3743" "#ff4242" "#74af68" "#dbdb95" "#34cae2" "#008b8b" "#00ede1" "#e1e1e0"])
- '(custom-enabled-themes (quote (manoj-dark)))
+ '(ansi-color-names-vector
+   ["#2d3743" "#ff4242" "#74af68" "#dbdb95" "#34cae2" "#008b8b" "#00ede1" "#e1e1e0"])
+ '(ansi-term-color-vector
+   [unspecified "#232c31" "#2a5491" "#237986" "#a03b1e" "#484d79" "#c59820" "#484d79" "#9ea7a6"])
+ '(custom-enabled-themes (quote (base16-chalk)))
+ '(custom-safe-themes
+   (quote
+    ("e1498b2416922aa561076edc5c9b0ad7b34d8ff849f335c13364c8f4276904f0" "cea3ec09c821b7eaf235882e6555c3ffa2fd23de92459751e18f26ad035d2142" "3380a2766cf0590d50d6366c5a91e976bdc3c413df963a0ab9952314b4577299" "3f546f127564de59f1c42dfd65d32bd7650fa5a614cd58c2df061da052ea3ec0" "7bef2d39bac784626f1635bd83693fae091f04ccac6b362e0405abf16a32230c" "a85e40c7d2df4a5e993742929dfd903899b66a667547f740872797198778d7b5" "8be07a2c1b3a7300860c7a65c0ad148be6d127671be04d3d2120f1ac541ac103" "1263771faf6967879c3ab8b577c6c31020222ac6d3bac31f331a74275385a452" "85d609b07346d3220e7da1e0b87f66d11b2eeddad945cac775e80d2c1adb0066" "b3bcf1b12ef2a7606c7697d71b934ca0bdd495d52f901e73ce008c4c9825a3aa" default)))
  '(indent-tabs-mode nil)
  '(standard-indent 4)
  '(tab-always-indent (quote complete))
- '(tab-stop-list (quote (4 8 12 16 20 24 28 32 36 40 44 48 52 56 60 64 68 72 76 80 84 88 92 96 102 106 110 114 118 122 126))))
+ '(tab-stop-list
+   (quote
+    (4 8 12 16 20 24 28 32 36 40 44 48 52 56 60 64 68 72 76 80 84 88 92 96 102 106 110 114 118 122 126))))
 
 (add-to-list 'load-path "~/.emacs.d/my_libs")
 (load "php-mode.el")
