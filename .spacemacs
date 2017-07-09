@@ -31,6 +31,12 @@ values."
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
    '(
+     yaml
+     php
+     html
+     markdown
+     python
+     javascript
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
      ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
@@ -309,6 +315,47 @@ layers configuration.
 This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
+  (global-hl-line-mode -1) ; Disable current line highlight
+  (yas-minor-mode 1) ; Enables yassnippet
+  (xclip-mode 1) ; Allows xclipping :D
+  ; tab for indent, me like. methehack, THANKS, MAN.
+  (define-key prog-mode-map (kbd "<tab>") 'indent-for-tab-command)
+  (setq web-mode-attr-indent-offset 2)
+  (setq web-mode-markup-indent-offset 2)
+  (setq web-mode-css-indent-offset 2)
+  (setq web-mode-code-indent-offset 2)
+  (setq web-mode-indent-style 2)
+  (setq css-indent-offset 2)
+  (setq-default js-indent-level 2)
+  (define-key yas-minor-mode-map (kbd "C-c a") 'yas-expand)
+  (defun copy-to-clipboard ()
+    (interactive)
+    (if (display-graphic-p)
+        (progn
+          (message "Yanked region to x-clipboard!")
+          (call-interactively 'clipboard-kill-ring-save)
+          )
+      (if (region-active-p)
+          (progn
+            (shell-command-on-region (region-beginning) (region-end) "xsel -i -b")
+            (message "Yanked region to clipboard!")
+            (deactivate-mark))
+        (message "No region active; can't yank to clipboard!")))
+    )
+
+  (defun paste-from-clipboard ()
+    (interactive)
+    (if (display-graphic-p)
+        (progn
+          (clipboard-yank)
+          (message "graphics active")
+          )
+      (insert (shell-command-to-string "xsel -o -b"))
+      )
+    )
+
+  (global-set-key [f8] 'copy-to-clipboard)
+  (global-set-key [f9] 'paste-from-clipboard)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
