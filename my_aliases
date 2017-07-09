@@ -1,4 +1,9 @@
-export EDITOR=emacs
+echo "Custom stuff loaded"
+# Start emacs as a server
+# emacs --daemon
+# https://www.gnu.org/software/emacs/manual/html_node/emacs/Emacs-Server.html
+#export EDITOR=emacsclient
+#alias emacs="emacsclient -c --alternate-editor=''"
 
 # Enables autocompletion for stormssh
 # https://github.com/vigo/stormssh-completion
@@ -12,8 +17,8 @@ dconf write /org/compiz/profiles/unity/plugins/put/put-next-output-key "'<Shift>
 alias ls='ls --color=auto'
 alias ll='ls -alF'
 alias cd..='cd ..'
-alias emacs='emacs -nw '
-alias emasc='emacs -nw '
+# alias emacs='emacs -nw '
+# alias emasc='emacs -nw '
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
