@@ -7,12 +7,13 @@ echo "Custom stuff loaded"
 
 # Enables autocompletion for stormssh
 # https://github.com/vigo/stormssh-completion
-autoload bashcompinit
-bashcompinit
-source /home/alfro/projects/stormssh-completion/stormssh
+# autoload bashcompinit
+# bashcompinit
+# source /home/alfro/projects/stormssh-completion/stormssh
 
 # Enables nice shortcuts: (Yet to finish)
-dconf write /org/compiz/profiles/unity/plugins/put/put-next-output-key "'<Shift><Control>Down'"
+# Needs installing compiz-plugins and activating the "Put" plugin
+# dconf write /org/compiz/profiles/unity/plugins/put/put-next-output-key "'<Shift><Control>Down'"
 
 alias ls='ls --color=auto'
 alias ll='ls -alF'
