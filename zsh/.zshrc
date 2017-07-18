@@ -85,6 +85,6 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 # For my personal aliases
-if [ -f ~/.aliases/my_aliases ]; then
-    . ~/.aliases/my_aliases
+if [ -f ~/.c12n/bash_aliases.sh ]; then
+    . ~/.c12n/bash_aliases.sh
 fi
