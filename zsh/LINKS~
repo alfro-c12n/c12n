@@ -1,0 +1,12 @@
+ls
+alfro@alfro-Z97P-D3:~/.c12n/zsh$ ln -s ~/.zshrc ~/.c12n/zsh/.zshrc
+ln: failed to create symbolic link '/home/alfro/.c12n/zsh/.zshrc': File exists
+alfro@alfro-Z97P-D3:~/.c12n/zsh$ rm ~/.zshrc 
+alfro@alfro-Z97P-D3:~/.c12n/zsh$ ln -s ~/.zshrc ~/.c12n/zsh/.zshrc
+ln: failed to create symbolic link '/home/alfro/.c12n/zsh/.zshrc': File exists
+alfro@alfro-Z97P-D3:~/.c12n/zsh$ ln -s ~/.c12n/zsh/.zshrc ~/.zshrc 
+alfro@alfro-Z97P-D3:~/.c12n/zsh$ ln -s ~/.c12n/zsh/.oh-my-zsh/ ~/.oh-my-zsh/
+alfro@alfro-Z97P-D3:~/.c12n/zsh$ rm -rf ~/.oh-my-zsh/
+alfro@alfro-Z97P-D3:~/.c12n/zsh$ ln -s ~/.c12n/zsh/.oh-my-zsh/ ~/.oh-my-zsh/
+ln: target '/home/alfro/.oh-my-zsh/' is not a directory: No such file or directory
+alfro@alfro-Z97P-D3:~/.c12n/zsh$ ln -s ~/.c12n/zsh/.oh-my-zsh/ ~/.oh-my-zsh
