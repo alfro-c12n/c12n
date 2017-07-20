@@ -1,6 +1,6 @@
 [submodule ".oh-my-zsh"]
 	path = zsh/.oh-my-zsh
-	url = https://github.com/robbyrussell/oh-my-zsh.git
+	url = git@github.com:alfro-c12n/oh-my-zsh.git
 [submodule "emacs/.spacemacs.d"]
 	path = emacs/.spacemacs.d
-	url = https://github.com/syl20bnr/spacemacs
+	url = git@github.com:alfro-c12n/spacemacs.git
