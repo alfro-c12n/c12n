@@ -357,6 +357,7 @@ you should place your code here."
 
   (global-set-key [f8] 'copy-to-clipboard)
   (global-set-key [f9] 'paste-from-clipboard)
+  (add-to-list 'default-frame-alist '(fullscreen . maximized))
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
