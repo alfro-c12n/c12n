@@ -18,6 +18,8 @@ echo "Custom stuff loaded"
 alias ls='ls --color=auto'
 alias ll='ls -alF'
 alias cd..='cd ..'
+alias ec='emacsclient -c '
+alias es='emacs --daemon -mm '
 # alias emacs='emacs -nw '
 # alias emasc='emacs -nw '
 alias grep='grep --color=auto'
