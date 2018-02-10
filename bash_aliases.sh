@@ -23,6 +23,8 @@ alias ec='emacsclient -c '
 alias es='emacs --daemon -mm '
 # Regular emacs has a different home, and it is used here.
 alias emacs='env HOME=/home/alfro/.c12n/emacs/home emacs -nw'
+#Export EDITOR to use emacs by default
+export EDITOR='env HOME=/home/alfro/.c12n/emacs/home emacs -nw'
 alias smac='env HOME=/home/alfro/.c12n/spacemacs/home emacs'
 alias sudo='sudo ' # WORKAROUND TO USE ALIASES WITH SUDO
 
@@ -305,4 +307,3 @@ alias pulseVU="gst-launch -m pulsesrc ! level interval=1000000000 ! fakesink "
 watcher() {
     export I=$(date +%s); watch -t -n 1 'T=$(date +%s);E=$(($T-$I));hours=$((E / 3600)) ; seconds=$((E % 3600)) ; minutes=$((seconds / 60)) ; seconds=$((seconds % 60)) ; echo $(printf "%02d:%02d:%02d" $hours $minutes $seconds) | toilet -F border'
 }
-
