@@ -2,5 +2,5 @@
 	path = zsh/.oh-my-zsh
 	url = git@github.com:alfro-c12n/oh-my-zsh.git
 [submodule "emacs/.spacemacs.d"]
-	path = emacs/.spacemacs.d
+	path = spacemacs/.spacemacs.d
 	url = git@github.com:alfro-c12n/spacemacs.git
