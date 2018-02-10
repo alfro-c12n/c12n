@@ -22,7 +22,8 @@ alias cd..='cd ..'
 alias ec='emacsclient -c '
 alias es='emacs --daemon -mm '
 # Regular emacs has a different home, and it is used here.
-alias emacs='env HOME=/home/alfro/.c12n/emacs_home emacs -nw'
+alias emacs='env HOME=/home/alfro/.c12n/emacs/home emacs -nw'
+alias smac='env HOME=/home/alfro/.c12n/spacemacs/home emacs'
 alias sudo='sudo ' # WORKAROUND TO USE ALIASES WITH SUDO
 
 alias grep='grep --color=auto'
