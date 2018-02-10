@@ -18,10 +18,13 @@ echo "Custom stuff loaded"
 alias ls='ls --color=auto'
 alias ll='ls -alF'
 alias cd..='cd ..'
+# .emacs.d/ has the spacemacs configuration. It is used typing 'spacemacs' or 'ec'.
 alias ec='emacsclient -c '
 alias es='emacs --daemon -mm '
-# alias emacs='emacs -nw '
-# alias emasc='emacs -nw '
+# Regular emacs has a different home, and it is used here.
+alias emacs='env HOME=/home/alfro/.c12n/emacs_home emacs -nw'
+alias sudo='sudo ' # WORKAROUND TO USE ALIASES WITH SUDO
+
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
