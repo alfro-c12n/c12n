@@ -25,7 +25,7 @@ alias es='emacs --daemon -mm '
 alias emacs='env HOME=/home/alfro/.c12n/emacs/home emacs -nw'
 #Export EDITOR to use emacs by default
 export EDITOR='env HOME=/home/alfro/.c12n/emacs/home emacs -nw'
-alias smac='env HOME=/home/alfro/.c12n/spacemacs/home emacs'
+alias smac='env HOME=/home/alfro/.c12n/spacemacs/home emacs -mm'
 alias sudo='sudo ' # WORKAROUND TO USE ALIASES WITH SUDO
 
 alias grep='grep --color=auto'
