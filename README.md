@@ -12,3 +12,10 @@ git config --global alias.lg 'log --color --graph --pretty=format:"%Cred%h%Crese
 4. Install custom stuf
 
 sudo apt install xclip
+
+5. Install emacs-anywhere:
+sudo apt install xdotool
+./emacs-anywhere/install
+
+6. Add shortcut for emacs-anywhere: (TODO: Include on install commands)
+Settings > Custom Shortcuts (Super+E)

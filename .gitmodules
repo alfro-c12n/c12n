@@ -4,3 +4,6 @@
 [submodule "emacs/.spacemacs.d"]
 	path = spacemacs/.spacemacs.d
 	url = git@github.com:alfro-c12n/spacemacs.git
+[submodule "emacs-anywhere"]
+	path = emacs-anywhere
+	url = https://github.com/alfro-c12n/emacs-anywhere.git
