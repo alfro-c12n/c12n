@@ -19,8 +19,8 @@ alias ls='ls --color=auto'
 alias ll='ls -alF'
 alias cd..='cd ..'
 # .emacs.d/ has the spacemacs configuration. It is used typing 'spacemacs' or 'ec'.
-alias ec='emacsclient -c '
-alias es='emacs --daemon -mm '
+alias ec='env HOME=/home/alfro/.c12n/spacemacs/home emacsclient -c '
+alias es='env HOME=/home/alfro/.c12n/spacemacs/home emacs --daemon -mm '
 # Regular emacs has a different home, and it is used here.
 alias emacs='env HOME=/home/alfro/.c12n/emacs/home emacs -nw'
 #Export EDITOR to use emacs by default
