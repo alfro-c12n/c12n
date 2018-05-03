@@ -1,4 +1,3 @@
-echo "Custom stuff loaded"
 # Start emacs as a server
 # emacs --daemon
 # https://www.gnu.org/software/emacs/manual/html_node/emacs/Emacs-Server.html
@@ -307,3 +306,7 @@ alias pulseVU="gst-launch -m pulsesrc ! level interval=1000000000 ! fakesink "
 watcher() {
     export I=$(date +%s); watch -t -n 1 'T=$(date +%s);E=$(($T-$I));hours=$((E / 3600)) ; seconds=$((E % 3600)) ; minutes=$((seconds / 60)) ; seconds=$((seconds % 60)) ; echo $(printf "%02d:%02d:%02d" $hours $minutes $seconds) | toilet -F border'
 }
+
+# Prints nice calendar
+when c
+echo "Custom stuff loaded"
