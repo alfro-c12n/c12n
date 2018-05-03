@@ -9,13 +9,25 @@ bash zsh/create-symlinks.sh
 3. Add git configs
 git config --global alias.lg 'log --color --graph --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset" --abbrev-commit'
 
-4. Install custom stuf
-
+## Install other custom stuf
 sudo apt install xclip
 
-5. Install emacs-anywhere:
+1. Install neofetch (awesome status tool)
+cd neofetch
+sudo make install
+# NOTE: Once I only use 17.04 onwards, I can just:
+# sudo apt install neofetch
+# and remove the subproject
+
+2. Install emacs-anywhere:
 sudo apt install xdotool
 ./emacs-anywhere/install
 
-6. Add shortcut for emacs-anywhere: (TODO: Include on install commands)
+3. Add shortcut for emacs-anywhere: (TODO: Include on install commands)
 Settings > Custom Shortcuts (Super+E)
+
+4. tiny-care-terminal?
+https://github.com/notwaldorf/tiny-care-terminal#make-it-go
+
+5. terminal icons support?
+./icons-in-terminal/install.sh
