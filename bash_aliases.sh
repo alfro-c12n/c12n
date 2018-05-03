@@ -18,13 +18,13 @@ alias ls='ls --color=auto'
 alias ll='ls -alF'
 alias cd..='cd ..'
 # .emacs.d/ has the spacemacs configuration. It is used typing 'spacemacs' or 'ec'.
-alias ec='env HOME=/home/alfro/.c12n/spacemacs/home emacsclient -c '
-alias es='env HOME=/home/alfro/.c12n/spacemacs/home emacs --daemon -mm '
+alias ec='env HOME=/home/alfro/.c12n/spacemacs/home /usr/bin/emacsclient -c '
+alias es='env HOME=/home/alfro/.c12n/spacemacs/home /usr/bin/emacs --daemon -mm '
 # Regular emacs has a different home, and it is used here.
-alias emacs='env HOME=/home/alfro/.c12n/emacs/home emacs -nw'
+alias emacs='env HOME=/home/alfro/.c12n/emacs/home /usr/bin/emacs -nw'
 #Export EDITOR to use emacs by default
-export EDITOR='env HOME=/home/alfro/.c12n/emacs/home emacs -nw'
-alias smac='env HOME=/home/alfro/.c12n/spacemacs/home emacs -mm'
+export EDITOR='env HOME=/home/alfro/.c12n/emacs/home /usr/bin/emacs -nw'
+alias smac='env HOME=/home/alfro/.c12n/spacemacs/home /usr/bin/emacs -mm'
 alias sudo='sudo ' # WORKAROUND TO USE ALIASES WITH SUDO
 
 alias grep='grep --color=auto'
