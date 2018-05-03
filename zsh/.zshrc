@@ -1,3 +1,6 @@
+[[ -s /home/alfro/.autojump/etc/profile.d/autojump.sh ]] && source /home/alfro/.autojump/etc/profile.d/autojump.sh
+
+autoload -U compinit && compinit -u
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
