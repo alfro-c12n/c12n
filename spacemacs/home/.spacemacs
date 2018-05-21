@@ -330,7 +330,7 @@ you should place your code here."
   (setq web-mode-code-indent-offset 2)
   (setq web-mode-indent-style 2)
   (setq css-indent-offset 2)
-  (setq-default js-indent-level 2)
+  (setq-default js-indent-level 4)
   (define-key yas-minor-mode-map (kbd "C-c a") 'yas-expand)
   (defun copy-to-clipboard ()
     (interactive)
