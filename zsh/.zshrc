@@ -91,3 +91,13 @@ source $ZSH/oh-my-zsh.sh
 if [ -f ~/.c12n/bash_aliases.sh ]; then
     . ~/.c12n/bash_aliases.sh
 fi
+
+# Testing tiny-care-terminal:
+#export TTC_BOTS="tinycarebot, selfcare_bot, magicrealismbot"
+export TTC_SAY_BOX="parrot"
+export TTC_APIKEYS=False
+export TTC_REPOS_DEPTH=2
+export TTC_GITBOT="gitlog"
+export TTC_WEATHER=Vigo
+export TTC_CELSIUS=true
+export TTC_REPOS="~/.c12n,~/projects/galicaster,~/projects/pmk/gcms-dev-enviroment/src/pumukit2,~/projects/pmk/gcms-dev-enviroment/src/pumukit2/src/Pumukit"
