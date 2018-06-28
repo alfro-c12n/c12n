@@ -15,11 +15,7 @@ cd autojump && ./install.py       # Awesome cd command (do j stuff)
 sudo apt install when             # Nice calendar util
 
 1. Install neofetch (awesome status tool)
-cd neofetch
-sudo make install
-# NOTE: Once I only use 17.04 onwards, I can just:
-# sudo apt install neofetch
-# and remove the subproject
+sudo apt install neofetch # Awesome status tool
 
 2. Install emacs-anywhere:
 sudo apt install xdotool
