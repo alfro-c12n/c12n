@@ -11,6 +11,8 @@ git config --global alias.lg 'log --color --graph --pretty=format:"%Cred%h%Crese
 
 ## Install other custom stuf
 sudo apt install xclip
+cd autojump && ./install.py       # Awesome cd command (do j stuff)
+sudo apt install when             # Nice calendar util
 
 1. Install neofetch (awesome status tool)
 cd neofetch
