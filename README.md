@@ -13,23 +13,26 @@ git config --global alias.lg 'log --color --graph --pretty=format:"%Cred%h%Crese
 sudo apt install xclip
 cd autojump && ./install.py       # Awesome cd command (do j stuff)
 sudo apt install when             # Nice calendar util
+pip3 install mycli                # Mysql client
+pip3 install pgcli                # Postgresql client
+pip3 install glances              # Htop + stuff
+sudo apt install neofetch
 
-1. Install neofetch (awesome status tool)
-sudo apt install neofetch # Awesome status tool
-
-2. Install emacs-anywhere:
+1. Install emacs-anywhere:
 sudo apt install xdotool
 ./emacs-anywhere/install
 
-3. Add shortcut for emacs-anywhere: (TODO: Include on install commands)
+2. Add shortcut for emacs-anywhere: (TODO: Include on install commands)
 Settings > Custom Shortcuts (Super+E)
 
-4. Add shortcut for jump to terminal (Super + ñ):
+3. Add shortcut for jump to terminal (Super + ñ):
 bash -c 'wmctrl -R $(wmctrl -l | grep -oh -e "@.*: ")' 
 
-5. tiny-care-terminal?
+4. tiny-care-terminal?
 https://github.com/notwaldorf/tiny-care-terminal#make-it-go
 
-6. terminal icons support?
+5. terminal icons support?
 ./icons-in-terminal/install.sh
 
+6. Install bat:
+https://github.com/sharkdp/bat
