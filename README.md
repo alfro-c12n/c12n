@@ -24,8 +24,12 @@ sudo apt install xdotool
 3. Add shortcut for emacs-anywhere: (TODO: Include on install commands)
 Settings > Custom Shortcuts (Super+E)
 
-4. tiny-care-terminal?
+4. Add shortcut for jump to terminal (Super + ñ):
+bash -c 'wmctrl -R $(wmctrl -l | grep -oh -e "@.*: ")' 
+
+5. tiny-care-terminal?
 https://github.com/notwaldorf/tiny-care-terminal#make-it-go
 
-5. terminal icons support?
+6. terminal icons support?
 ./icons-in-terminal/install.sh
+
