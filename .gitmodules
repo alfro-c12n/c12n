@@ -10,3 +10,9 @@
 [submodule "autojump"]
 	path = autojump
 	url = git://github.com/joelthelion/autojump.git
+[submodule "Qogir-theme"]
+	path = Qogir-theme
+	url = git@github.com:vinceliuice/Qogir-theme.git
+[submodule "arc-icon-theme"]
+	path = arc-icon-theme
+	url = git@github.com:horst3180/arc-icon-theme.git

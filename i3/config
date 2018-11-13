@@ -190,3 +190,5 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute s
 #Wallpaper
 exec_always feh --bg-scale --no-xinerama ~/Pictures/Wallpapers/portal.jpg
 
+# Lower bar
+exec --no-startup-id gnome-settings-daemon
