@@ -166,7 +166,8 @@ bar {
         status_command i3status
 }
 
-bindsym Ctrl+Mod1+L exec i3lock -i ~/Pictures/Wallpapers/portal.png
+set $background ~/Media/Pictures/Wallpapers/portal.png
+bindsym Ctrl+Mod1+L exec i3lock -i $background
 
 bindsym $mod+Control+Left move workspace to output left
 bindsym $mod+Control+Right move workspace to output right
@@ -183,7 +184,7 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #d
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
 
 #Wallpaper
-exec_always feh --bg-scale --no-xinerama ~/Pictures/Wallpapers/portal.jpg
+exec_always feh --bg-scale --no-xinerama $background
 
 # Lower bar
 exec --no-startup-id gnome-settings-daemon
