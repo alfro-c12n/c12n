@@ -177,11 +177,11 @@ bindsym Ctrl+Mod1+Down workspace next_on_output
 bindsym Ctrl+Mod1+Up workspace prev_on_output
 
 # Pulse Audio controls + plus/minus audio controls
-bindsym $mod+plus exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
-bindsym $mod+minus exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
+bindsym $mod+plus exec --no-startup-id amixer -D pulse sset Master 5%+ #increase sound volume
+bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -D pulse sset Master 5%+ #increase sound volume
+bindsym $mod+minus exec --no-startup-id amixer -D pulse sset Master 5%- #decrease sound volume
+bindsym XF86AudioLowerVolume exec --no-startup-id amixer -D pulse sset Master 5%- # mute sound
+bindsym XF86AudioMute exec --no-startup-id amixer -D pulse sset Master toggle # mute sound
 
 #Wallpaper
 exec_always feh --bg-scale --no-xinerama $background
