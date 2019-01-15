@@ -2,7 +2,7 @@
 
 autoload -U compinit && compinit -u
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$PATH:/home/alfro/.cargo/bin
 
 # Path to your oh-my-zsh installation.
   export ZSH=/home/alfro/.oh-my-zsh
@@ -55,7 +55,7 @@ ZSH_THEME="gitster"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git, command-not-found)
+plugins=(git, command-not-found, ssh-agent)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -101,3 +101,5 @@ export TTC_GITBOT="gitlog"
 export TTC_WEATHER=Vigo
 export TTC_CELSIUS=true
 export TTC_REPOS="~/.c12n,~/projects/galicaster,~/projects/pmk/gcms-dev-enviroment/src/pumukit2,~/projects/pmk/gcms-dev-enviroment/src/pumukit2/src/Pumukit"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
