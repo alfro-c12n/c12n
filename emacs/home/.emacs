@@ -68,9 +68,7 @@
 (add-to-list 'load-path "~/.emacs.d/my_libs")
 (load "php-mode.el")
 (load "web-mode.el")
-(require 'web-mode) (add-to-list 'auto-mode-alist '("\\.phtml\\'" . web-mode)) (add-to-list 'auto-mode-alist '("\\.[agj]sp\\'" . web-mode)) (add-to-list 'auto-mode-alist '("\\.as[cp]x\\'" . web-mode)) (add-to-list 'auto-mode-alist '("\\.erb\\'" . web-mode)) (add-to-list 'auto-mode-alist '("\\.mustache\\'" . web-mode)) (add-to-list 'auto-mode-alist '("\\.djhtml\\'" . web-mode)) (add-to-list 'auto-mode-alist '("\\.html\\.twig\\'" . web-mode))
-
-(require 'web-mode) (add-to-list 'auto-mode-alist '("\\.phtml\\'" . web-mode)) (add-to-list 'auto-mode-alist '("\\.tpl\\.php\\'" . web-mode)) (add-to-list 'auto-mode-alist '("\\.[agj]sp\\'" . web-mode)) (add-to-list 'auto-mode-alist '("\\.as[cp]x\\'" . web-mode)) (add-to-list 'auto-mode-alist '("\\.erb\\'" . web-mode)) (add-to-list 'auto-mode-alist '("\\.mustache\\'" . web-mode)) (add-to-list 'auto-mode-alist '("\\.djhtml\\'" . web-mode)) (add-to-list 'auto-mode-alist '("\\.php\\'" . web-mode)) (add-to-list 'auto-mode-alist '("\\.html\\.twig\\'" . web-mode))
+(require 'web-mode) (add-to-list 'auto-mode-alist '("\\.tpl\\.php\\'" . web-mode)) (add-to-list 'auto-mode-alist '("\\.phtml\\'" . web-mode)) (add-to-list 'auto-mode-alist '("\\.[agj]sp\\'" . web-mode)) (add-to-list 'auto-mode-alist '("\\.as[cp]x\\'" . web-mode)) (add-to-list 'auto-mode-alist '("\\.erb\\'" . web-mode)) (add-to-list 'auto-mode-alist '("\\.mustache\\'" . web-mode)) (add-to-list 'auto-mode-alist '("\\.djhtml\\'" . web-mode)) (add-to-list 'auto-mode-alist '("\\.html\\.twig\\'" . web-mode))
 
 (require 'php-mode)
 (custom-set-faces
@@ -96,12 +94,16 @@
 
 (defun my-web-mode-hook ()
   "Hooks for Web mode."
-  (setq web-mode-markup-indent-offset 2)
 
   ;; set indentation, can set different indentation level for different code type
+  (setq web-mode-attr-indent-offset 4)
+  (setq web-mode-enable-auto-indentation nil)
+  (setq web-mode-markup-indent-offset 4)
+  (setq web-mode-css-indent-offset 4)
   (setq web-mode-code-indent-offset 4)
-  (setq web-mode-css-indent-offset 2)
-  (setq web-mode-markup-indent-offset 2)
+  (setq web-mode-indent-style 4)
+  (setq css-indent-offset 4)
+  (setq-default js-indent-level 4)
 )
 (add-hook 'web-mode-hook  'my-web-mode-hook)
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
