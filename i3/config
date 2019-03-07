@@ -91,6 +91,9 @@ bindsym $mod+a focus parent
 # focus the child container
 #bindsym $mod+d focus child
 
+# Windows that should be floating:
+for_window [class="Gnome-calculator" instance="gnome-calculator"] floating enable
+
 # assign workspaces to screens
 workspace 1 output $outputLeft
 workspace 3 output $outputLeft
