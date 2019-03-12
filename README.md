@@ -16,7 +16,6 @@ sudo apt install when             # Nice calendar util
 pip3 install mycli                # Mysql client
 pip3 install pgcli                # Postgresql client
 pip3 install glances              # Htop + stuff
-sudo apt install neofetch
 sudo apt install cargo            # To install rust stuff 
 cargo install hyperfile           # Command-line Benchmark tool
 cargo install exa                 # Awesome replacement for ls
@@ -31,6 +30,8 @@ brew install fzf
 
 brew install bench
 
+sudo apt install neofetch         # Really cool looking pc info tool
+sudo apt install rofi             # Easily customizable dmenu alternative
 
 1. Install emacs-anywhere:
 sudo apt install xdotool
@@ -50,3 +51,7 @@ https://github.com/notwaldorf/tiny-care-terminal#make-it-go
 
 6. Install bat:
 https://github.com/sharkdp/bat
+
+# Theming (nice for i3):
+Qobir-theme:
+sudo apt install lxappearance

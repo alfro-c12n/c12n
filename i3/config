@@ -172,6 +172,8 @@ bindsym $mod+r mode "resize"
 bar {
         status_command i3status
 }
+# Lower bar
+exec --no-startup-id nm-applet
 
 set $background ~/Media/Pictures/Wallpapers/portal.png
 
@@ -187,8 +189,12 @@ bindsym Ctrl+Mod1+Up workspace prev_on_output
 
 # Pulse Audio controls + plus/minus audio controls
 bindsym $mod+plus exec --no-startup-id amixer -D pulse sset Master 5%+ #increase sound volume
+bindsym $mod+button4 exec --no-startup-id amixer -D pulse sset Master 5%+ #increase sound volume
+bindsym --whole-window button6 exec --no-startup-id amixer -D pulse sset Master 5%+ #increase sound volume
 bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -D pulse sset Master 5%+ #increase sound volume
 bindsym $mod+minus exec --no-startup-id amixer -D pulse sset Master 5%- #decrease sound volume
+bindsym button7 exec --no-startup-id amixer -D pulse sset Master 5%- #decrease sound volume
+bindsym $mod+button5 exec --no-startup-id amixer -D pulse sset Master 5%- #decrease sound volume
 bindsym XF86AudioLowerVolume exec --no-startup-id amixer -D pulse sset Master 5%- # mute sound
 bindsym XF86AudioMute exec --no-startup-id amixer -D pulse sset Master toggle # mute sound
 
