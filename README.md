@@ -17,7 +17,8 @@ pip3 install mycli                # Mysql client
 pip3 install pgcli                # Postgresql client
 pip3 install glances              # Htop + stuff
 sudo apt install cargo            # To install rust stuff 
-cargo install hyperfile           # Command-line Benchmark tool
+sudo apt install cmake            # Needed for hyperfile?
+cargo install hyperfine           # Command-line Benchmark tool
 cargo install exa                 # Awesome replacement for ls
 cargo install fd-find             # Rust replacement for find
 RUSTFLAGS="-C target-cpu=native" cargo install --force --features simd-accel ripgrep   # (rg) grep replaced (how does it compare with ag?) Enabled simd-accel
