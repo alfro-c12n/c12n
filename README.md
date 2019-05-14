@@ -16,8 +16,11 @@ sudo apt install when             # Nice calendar util
 pip3 install mycli                # Mysql client
 pip3 install pgcli                # Postgresql client
 pip3 install glances              # Htop + stuff
-sudo apt install cargo            # To install rust stuff 
 sudo apt install cmake            # Needed for hyperfile?
+
+## Rust stuff
+curl https://sh.rustup.rs -sSf | sh # Install rust stuff
+#Alternatively, check the webpage at :https://www.rust-lang.org/tools/install
 cargo install hyperfine           # Command-line Benchmark tool
 cargo install exa                 # Awesome replacement for ls
 cargo install fd-find             # Rust replacement for find
