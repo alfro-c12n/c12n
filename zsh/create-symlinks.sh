@@ -9,3 +9,5 @@ chsh -s /bin/zsh $USER
 
 rm -rf ~/.config/i3/config
 ln -s ~/.c12n/i3/config ~/.config/i3/config
+rm -rf ~/.config/i3/i3status.conf
+ln -s ~/.c12n/i3/i3status.conf ~/.config/i3/i3status.conf
