@@ -14,8 +14,10 @@
 # Needs installing compiz-plugins and activating the "Put" plugin
 # dconf write /org/compiz/profiles/unity/plugins/put/put-next-output-key "'<Shift><Control>Down'"
 
+alias lls=ls
 alias ls='ls --color=auto'
 alias ll='ls -alF'
+alias ls=exa
 alias cd..='cd ..'
 # .emacs.d/ has the spacemacs configuration. It is used typing 'spacemacs' or 'ec'.
 alias ec='env XMODIFIERS= HOME=/home/alfro/.c12n/spacemacs/home /usr/bin/emacsclient -c '
@@ -306,6 +308,23 @@ alias pulseVU="gst-launch -m pulsesrc ! level interval=1000000000 ! fakesink "
 watcher() {
     export I=$(date +%s); watch -t -n 1 'T=$(date +%s);E=$(($T-$I));hours=$((E / 3600)) ; seconds=$((E % 3600)) ; minutes=$((seconds / 60)) ; seconds=$((seconds % 60)) ; echo $(printf "%02d:%02d:%02d" $hours $minutes $seconds) | toilet -F border'
 }
+
+truecolortest() {
+    awk 'BEGIN{
+    s="/\\/\\/\\/\\/\\"; s=s s s s s s s s;
+    for (colnum = 0; colnum<77; colnum++) {
+        r = 255-(colnum*255/76);
+        g = (colnum*510/76);
+        b = (colnum*255/76);
+        if (g>255) g = 510-g;
+        printf "\033[48;2;%d;%d;%dm", r,g,b;
+        printf "\033[38;2;%d;%d;%dm", 255-r,255-g,255-b;
+        printf "%s\033[0m", substr(s,colnum+1,1);
+    }
+    printf "\n";
+}'
+}
+
 
 # Prints nice calendar
 when c
