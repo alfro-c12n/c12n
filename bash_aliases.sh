@@ -325,6 +325,8 @@ truecolortest() {
 }'
 }
 
+#Npm local global dir
+export PATH=~/.npm-global/bin:$PATH
 
 # Prints nice calendar
 when c
