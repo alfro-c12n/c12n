@@ -21,13 +21,15 @@ sudo apt install cmake            # Needed for hyperfile?
 cargo install hyperfine           # Command-line Benchmark tool
 cargo install exa                 # Awesome replacement for ls
 cargo install fd-find             # Rust replacement for find
+cargo install --git https://github.com/jwilm/alacritty # Fastest terminal :P
+
 RUSTFLAGS="-C target-cpu=native" cargo install --force --features simd-accel ripgrep   # (rg) grep replaced (how does it compare with ag?) Enabled simd-accel
 ## Install Fzf/Brew (Ctrl-T, Ctrl-R, Alt-C)
 # https://github.com/junegunn/fzf#installation
 sudo apt install linuxbrew-wrapper
 brew install
 brew install fzf
-/home/linuxbrew/.linuxbrew/opt/fzf/install
+$(brew --prefix)/opt/fzf/install # Normally /home/linuxbrew/.linuxbrew
 
 brew install bench
 
