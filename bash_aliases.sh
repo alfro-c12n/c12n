@@ -36,6 +36,7 @@ alias egrep='egrep --color=auto'
 # -- Shorteners --
 alias ape='php bin/console'
 alias drun="docker run -it "
+alias dip="docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}'"
 
 # -- Utils --
 alias follow="git log --topo-order -u -L $2,${3:-$2}:'$1'"
