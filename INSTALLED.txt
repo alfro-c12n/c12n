@@ -1,0 +1,63 @@
+sudo apt install byobu           # Tmux-screen abstraction
+sudo apt install ag              # Like grep but cooler
+sudo apt install gparted         # To party, obviously
+sudo apt install guake           # Nice terminal (set up as default, see below)
+
+#For software development
+sudo apt install git
+
+#For image editing
+sudo apt install gimp
+
+#Best terminal shell
+sudo apt install zsh
+# To configure this, see personal git configurations repo
+
+#For games
+Steam: http://store.steampowered.com/about/
+
+#Skype
+Skype: https://www.skype.com/en/download-skype/skype-for-linux/downloading/?type=weblinux-deb
+
+#Eclipse (Java - Minecraft)
+https://www.eclipse.org/downloads/eclipse-pa
+
+# For passes
+sudo apt install keepassx
+
+## Changes in dconf required ##
+# Set the default terminal on /org/gnome/desktop/applications/terminal/exec
+# I am using "guake" for a uniscreen setup. IT's great.
+
+# Add .desktop links to ~/.local/share/applications/
+# then edit: /org/gnome/shell/favorite-apps
+# or: /com/canonical/unity/launcher/favorites
+# For reference, an example of Home.desktop (for firefox): (The important part is Exec=firefox %u -P default, where 'default' is the profile you set up)
+
+[Desktop Entry]
+Version=1.0
+Name=Firefox Web Browser
+Comment=Browse the World Wide Web
+GenericName=Web Browser
+Keywords=Internet;WWW;Browser;Web;Explorer
+Exec=firefox %u -P default
+Terminal=false
+X-MultipleArgs=false
+Type=Application
+Icon=firefox
+Categories=GNOME;GTK;Network;WebBrowser;
+MimeType=text/html;text/xml;application/xhtml+xml;application/xml;application/rss+xml;application/rdf+xml;image/gif;image/jpeg;image/png;x-scheme-handler/http;x-scheme-handler/https;x-scheme-handler/ftp;x-scheme-handler/chrome;video/webm;application/x-xpinstall;
+StartupNotify=true
+Actions=NewWindow;NewPrivateWindow;
+Name[en_US]=Home
+
+[Desktop Action NewWindow]
+Name=Open a New Window
+Exec=firefox -new-window
+OnlyShowIn=Unity;
+
+[Desktop Action NewPrivateWindow]
+Name=Open a New Private Window
+Exec=firefox -private-window
+OnlyShowIn=Unity;
+

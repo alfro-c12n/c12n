@@ -61,3 +61,7 @@ https://github.com/sharkdp/bat
 # Theming (nice for i3):
 Qobir-theme:
 sudo apt install lxappearance
+
+# Font
+sudo apt install fonts-font-awesome
+sudo apt install ttf-ancient-fonts

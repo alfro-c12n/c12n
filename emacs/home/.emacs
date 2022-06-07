@@ -58,7 +58,9 @@
    (quote
     ("e1498b2416922aa561076edc5c9b0ad7b34d8ff849f335c13364c8f4276904f0" "cea3ec09c821b7eaf235882e6555c3ffa2fd23de92459751e18f26ad035d2142" "3380a2766cf0590d50d6366c5a91e976bdc3c413df963a0ab9952314b4577299" "3f546f127564de59f1c42dfd65d32bd7650fa5a614cd58c2df061da052ea3ec0" "7bef2d39bac784626f1635bd83693fae091f04ccac6b362e0405abf16a32230c" "a85e40c7d2df4a5e993742929dfd903899b66a667547f740872797198778d7b5" "8be07a2c1b3a7300860c7a65c0ad148be6d127671be04d3d2120f1ac541ac103" "1263771faf6967879c3ab8b577c6c31020222ac6d3bac31f331a74275385a452" "85d609b07346d3220e7da1e0b87f66d11b2eeddad945cac775e80d2c1adb0066" "b3bcf1b12ef2a7606c7697d71b934ca0bdd495d52f901e73ce008c4c9825a3aa" default)))
  '(indent-tabs-mode nil)
- '(package-selected-packages (quote (web-mode php-mode flymake-php)))
+ '(package-selected-packages
+   (quote
+    (mmm-jinja2 mmm-mode jinja2-mode web-mode php-mode flymake-php)))
  '(standard-indent 4)
  '(tab-always-indent (quote complete))
  '(tab-stop-list

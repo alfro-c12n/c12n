@@ -55,7 +55,7 @@ ZSH_THEME="gitster"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git, command-not-found, ssh-agent)
+plugins=(git, command-not-found, ssh-agent, poetry, asdf)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -103,3 +103,5 @@ export TTC_CELSIUS=true
 export TTC_REPOS="~/.c12n,~/projects/galicaster,~/projects/pmk/gcms-dev-enviroment/src/pumukit2,~/projects/pmk/gcms-dev-enviroment/src/pumukit2/src/Pumukit"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+export PATH="$HOME/.poetry/bin:$PATH"
